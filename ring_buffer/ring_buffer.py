@@ -1,13 +1,16 @@
 class RingBuffer:
     def __init__(self, capacity):
         self.capacity = 5
-        self.data = ['a', 'b', 'c', 'd', 'e']
+        self.data = []
 
 
     def append(self, item):
         # Should add the given element to the buffer.
-        self.data.pop(0)
         self.data.append(item)
+        if len(self.data) > 5:
+            self.data.pop(0)
+
+        
 
     def get(self):
         # Returns all of the elements in the buffer 
